@@ -30,24 +30,13 @@ import Big from 'big.js';
         ];
       }
 
-      onAddCarton(product: Product) {
-        this.cart_items = this.cart_items + 1
-        this.carton_items = this.carton_items + 1
-
-        if (this.cart_items > 0) {
-          this.units = (this.cart_items * product.cartonUnits)
-        }
-
-        console.log(this.units)
-
+      onAddToCart(product: Product, button: String) {
+        console.log(button)
+        
       }
 
       onAddUnits(product: Product) {
-        this.cart_items = this.cart_items + 1
-        this.unit_items = this.unit_items + 1
-
-        this.units = this.units + this.unit_items
-        console.log(this.units)
+        
       }
 
       addProduct() {

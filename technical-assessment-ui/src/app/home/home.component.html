@@ -85,7 +85,6 @@
 									<th class="cell100 column3">Units per Carton</th>
 									<th class="cell100 column4">Carton Price</th>
 									<th class="cell100 column5"></th>
-									
 								</tr>
 							</thead>
 						</table>
@@ -94,13 +93,13 @@
 					<div class="table100-body js-pscroll">
 						<table>
 							<tbody>
-								<tr class="row100 head" *ngFor="let product of products">
+								<tr class="row100 head" *ngFor="let product of products; last as l">
 									<td class="cell100 column1">{{product.productId}}</td>
 									<td class="cell100 column2">{{product.productName}}</td>
 									<td class="cell100 column3">{{product.cartonUnits}}</td>
 									<td class="cell100 column4">{{product.cartonPrice}}</td>
-									<td class="cell100 column5"><a class="button large icon solid fa-arrow-circle-right" (click)="onAddCarton(product)">Add Carton ({{carton_items}})</a></td>
-									<td><a class="button large icon solid fa-arrow-circle-right" (click)="onAddUnits(product)" >Add Unit ({{unit_items}})</a></td>
+									<td class="cell100 column5"><a class="button large icon solid fa-arrow-circle-right" (click)="onAddToCart(product, 'carton')">Add Carton ({{carton_items}})</a></td>
+									<td><a class="button large icon solid fa-arrow-circle-right" (click)="onAddToCart(product, 'unit')" >Add Unit ({{unit_items}})</a></td>
 								</tr>
 							</tbody>
 						</table>
