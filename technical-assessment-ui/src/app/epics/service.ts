@@ -10,18 +10,18 @@ export class Service {
   private serviceUrl: string;
  
   constructor(private http: HttpClient) {
-    this.serviceUrl = 'http://localhost:8080/v1/api';
+    this.serviceUrl = 'http://localhost:8080/v1/api/';
   }
  
-  public findAll(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.serviceUrl + '/all');
+  public getProducts() {
+    return this.http.get(this.serviceUrl + 'products');
   }
  
   public addProduct(product: Product) {
-    return this.http.post<Product>(this.serviceUrl + '/add', product);
+    return this.http.post<Product>(this.serviceUrl + 'product', product);
   }
 
-  public findOrderPrice(order: Order) {
-    return this.http.post<Order>(this.serviceUrl + '/findOrderPrice', order);
+  public findOrderPrice(order: any) {
+    return this.http.post(this.serviceUrl + 'findOrderPrice', order);
   }
 }

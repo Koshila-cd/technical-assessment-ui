@@ -1,9 +1,11 @@
 import Big from 'big.js';
 
 export class Product {
-    productId: number;
+    id: number;
     productName: string;
-    cartonUnits: number;
-    cartonPrice: Big;
+    unitsPerCarton: number;
+    cartonPrice: number;
     unitPrice: number;
+    units: number;
+    price: number;
 }

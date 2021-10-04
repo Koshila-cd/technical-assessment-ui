@@ -70,6 +70,7 @@ button,
         top: 0.05em;
     }
 .icon-add {
+    color: #222222;
     margin-left: 50px;
     margin-bottom: 50px;
     margin-right: 820px;
@@ -291,6 +292,10 @@ button,
   .table100 {
     background-color: #fff;
   }
+
+  .row100 {
+    align-items: center;
+  }
   
   table {
     width: 100%;
@@ -298,7 +303,8 @@ button,
   
   th, td {
     font-weight: unset;
-    padding-right: 10px;
+    /* padding-right: 10px; */
+    align-items: center;
   }
   
   .column1 {

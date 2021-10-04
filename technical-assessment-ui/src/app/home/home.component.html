@@ -17,89 +17,46 @@
 					
 					<!-- <div class="table100-head"> -->
 						<a href="#" class="button icon-add solid fa-arrow-circle-right">
-							Add Product
+							
 						</a>
 						<a href="#" class="button-unclick icon solid fa-arrow-circle-right">
-							<img src = "../../assets/cart-icon.png" height="50" width="50">{{cart_items}}
+							<img src = "../../assets/cart-icon.png" height="50" width="50">
 						</a>
 						<a href="#" class="button-unclick icon solid fa-arrow-circle-right">
 							<a href="#" class="button-unclick icon solid fa-arrow-circle-right">
-								${{total_price}}
+								{{total_price | number : '1.2-2'}}
 							</a>
 						</a>
-					<!-- </div> -->
-					<!-- <div class="table100-head">
-						<table>
-							<thead>
-							</thead>
-						</table>
-					</div>
-
-					<div class="table100-body js-pscroll">
-						<table>
-							<tbody>
-							</tbody>
-						</table>
-					</div>
-				</div>
-
-				<div class="table100 ver3 m-b-110">
-					<div class="table100-head">
-						<table>
-							<thead>
-							</thead>
-						</table>
-					</div>
-
-					<div class="table100-body js-pscroll">
-						<table>
-							<tbody>
-							</tbody>
-						</table>
-					</div>
-				</div>
-
-				<div class="table100 ver4 m-b-110">
-					<div class="table100-head">
-						<table>
-							<thead>
-							</thead>
-						</table>
-					</div>
-
-					<div class="table100-body js-pscroll">
-						<table>
-							<tbody>
-							</tbody>
-						</table>
-					</div> -->
-				<!-- </div> -->
 				<div class="table100 ver5 m-b-110">
 					
-					<div class="table100-head">
+					<!-- <div class="table100-head">
+						<table>
+							
+						</table>
+					</div> -->
+
+					<div class="table100-body js-pscroll">
 						<table>
 							<thead>
 								<tr class="row100 head">
-									<th class="cell100 column1">Product #</th>
-									<th class="cell100 column2">Product Name</th>
-									<th class="cell100 column3">Units per Carton</th>
-									<th class="cell100 column4">Carton Price</th>
-									<th class="cell100 column5"></th>
+									<th>Product #</th>
+									<th>Product Name</th>
+									<th>Units per Carton</th>
+									<th>Carton Price</th>
+									<th></th>
+									<th></th>
+									<th>Price</th>
 								</tr>
 							</thead>
-						</table>
-					</div>
-
-					<div class="table100-body js-pscroll">
-						<table>
 							<tbody>
 								<tr class="row100 head" *ngFor="let product of products; last as l">
-									<td class="cell100 column1">{{product.productId}}</td>
-									<td class="cell100 column2">{{product.productName}}</td>
-									<td class="cell100 column3">{{product.cartonUnits}}</td>
-									<td class="cell100 column4">{{product.cartonPrice}}</td>
-									<td class="cell100 column5"><a class="button large icon solid fa-arrow-circle-right" (click)="onAddToCart(product, 'carton')">Add Carton ({{carton_items}})</a></td>
-									<td><a class="button large icon solid fa-arrow-circle-right" (click)="onAddToCart(product, 'unit')" >Add Unit ({{unit_items}})</a></td>
+									<td>{{product.id}}</td>
+									<td>{{product.productName}}</td>
+									<td>{{product.unitsPerCarton}}</td>
+									<td>{{product.cartonPrice | number : '1.2-2'}}</td>
+									<td><input [(ngModel)]="product.units" type="number" > units</td>
+									<td><a class="button large icon solid fa-arrow-circle-right" (click)="onAddToCart(product)" >Add to Cart</a></td>
+									<td>{{product.price | number : '1.2-2'}}</td>
 								</tr>
 							</tbody>
 						</table>
